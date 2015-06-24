@@ -1,20 +1,18 @@
-var path = require('path');
-var knex = require('knex');
-var mysql = require('mysql');
+// var path = require('path');
+// // var knex = require('knex');
 
-var db = require('knex')({
-  client: 'mysql',
-  connection: {
-    host: process.env.RDS_HOSTNAME, // will change for deployment
-    port: process.env.RDS_PORT,
-    user: process.env.RDS_USERNAME,
-    password: process.env.RDS_PASSWORD,
-    database: 'codeusdb',// initials of our names
-    // database: process.env.RDS_PORT,
-    charset: 'utf8'
-    // filename: path.join(__dirname, '../db/codeus.mysql')
-  }
-});
+// var db = require('knex')({
+//   client: 'mysql',
+//   connection: {
+//     host: '127.0.0.1', // will change for deployment
+//     port: '3306',
+//     user: 'codeus',
+//     password: 'kbscjm', // initials of our names
+//     database: 'codeusdb',
+//     charset: 'utf8',
+//     filename: path.join(__dirname, '../db/codeus.mysql')
+//   }
+// });
 
 // var bookshelf = require('bookshelf')(db);
 
