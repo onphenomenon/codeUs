@@ -4,8 +4,7 @@
   "description": "connect with github",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "karma start --browsers PhantomJS"
+    "start": "node server.js"
   },
   "author": "Karianne Burns",
   "license": "ISC",

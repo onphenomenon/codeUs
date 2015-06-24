@@ -6,9 +6,12 @@ require('server/config/middleware.js')(app, express);
 
 module.exports = app;
 
-app.listen(8000);
+app.configure(function(){
+  app.set('port', process.env.PORT || 8000);
+});
 
-var port = 8000;
-var ip = "127.0.0.1";
-console.log("Listening on http://" + ip + ":" + port);
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+
 
