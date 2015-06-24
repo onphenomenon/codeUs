@@ -1,8 +1,8 @@
-var bookshelf = require('../config');
-var Coder = require('../models/coder');
+// var bookshelf = require('../config');
+// var Coder = require('../models/coder');
 
-var Coders = new bookshelf.Collection();
+// var Coders = new bookshelf.Collection();
 
-Coders.model = Coder;
+// Coders.model = Coder;
 
-module.exports = Coders;
+// module.exports = Coders;
