@@ -2,7 +2,7 @@
 // app.use('/api', apiRouter);
 
 // C: /#/user
-	// C: initialize function does GET to server for (/realtime) realtime GH info, database info 
+	// C: initialize function does GET to server for (/realtime) realtime GH info, database info
 	// 	and(/addsodata) stack overflow
 
 		// S: determine GH username in req.user.username.  get realtime GH info and send back to client
@@ -22,7 +22,7 @@ var Languages = require('../app/collections/languages');
 var CoderLanguage = require('../app/models/coderlanguage');
 var CodersLanguages = require('../app/collections/coderslanguages');
 
-var token = 'b14be7134eb201df873357220c2b48ce299d1fd8'; // do not upload to GitHub with this token assigned explicitly!
+var token = 'c01513ebcb71fbc32d7b1cb57c541a6e11aea82a'; // do not upload to GitHub with this token assigned explicitly!
 
 var stackOptions = {
 	url: 'https://api.stackexchange.com/2.2/users?key=TKQV9fx1oXQhozGO*SGQNA((&access_token=saN8CDoS7M8lbHLZj(mC2w))&pagesize=100&order=desc&sort=reputation&site=stackoverflow&filter=!Ln4IB)_.hsRjrBGzKe*i*W&page=',
@@ -39,9 +39,9 @@ module.exports = function (app) {
 			url: 'https://api.github.com/users/',
 			headers: {
 				'User-Agent': 'CodeUs-App',
-				'Authorization': 'token '+ token 
+				'Authorization': 'token '+ token
 			},
-	    transform: function(body, response) {  
+	    transform: function(body, response) {
 	      return JSON.parse(body);
 	    }
 		};
@@ -82,7 +82,7 @@ module.exports = function (app) {
 						// 	coder.so_upvote_count = userModel.attributes.so_upvote_count;
 						// 	res.status(200).send(coder);
 						// })
-				} else {				
+				} else {
 					coder.cred = {};
 					coder.cred.forks = userModel.attributes.forks;
 					coder.cred.watchers_count = userModel.attributes.watchers_count;
@@ -96,7 +96,7 @@ module.exports = function (app) {
 					coder.gh_member_since = userModel.attributes.created_at;
 					coder.so_reputation = userModel.attributes.so_reputation;
 					coder.so_answer_count = userModel.attributes.so_answer_count;
-					
+
 					coder.so_question_count = userModel.attributes.so_question_count;
 					coder.so_upvote_count = userModel.attributes.so_upvote_count;
 
@@ -177,7 +177,7 @@ module.exports = function (app) {
 	app.get('/addsodata', function(req, res, next) {
 		var addSO = function(pg) {
 			stackOptions.url = 'https://api.stackexchange.com/2.2/users?key=TKQV9fx1oXQhozGO*SGQNA((&access_token=saN8CDoS7M8lbHLZj(mC2w))&pagesize=100&order=desc&sort=reputation&site=stackoverflow&filter=!Ln4IB)_.hsRjrBGzKe*i*W&page=' + pg;
-			
+
 			rp(stackOptions)
 				.then(function(response) {
 					var parsed = JSON.parse(response);
@@ -193,11 +193,11 @@ module.exports = function (app) {
 						setTimeout(function() {
 							addSO(pg);
 						}, backoff * 1000);
-					});		
+					});
 			})
 			.catch(console.error);
 		};
 		addSO(1);
 	});
-	
+
 };
