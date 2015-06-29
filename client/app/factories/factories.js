@@ -24,8 +24,8 @@ mod.factory('User', function($http) {
     // },
     url: {
       root: 'http://mygithubdb.elasticbeanstalk.com',
-      self: 'http://mygithubdb.elasticbeanstalk.com/#'+'/api/user',
-      related: 'http://mygithubdb.elasticbeanstalk.com/#' + '/api/related'
+      self: 'http://mygithubdb.elasticbeanstalk.com'+'/api/user',
+      related: 'http://mygithubdb.elasticbeanstalk.com' + '/api/related'
       // user: 'http://127.0.0.1:8000'+'/api/user/',
     },
     getUser: function(userUrl) {
