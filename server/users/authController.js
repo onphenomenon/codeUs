@@ -2,8 +2,8 @@ var passport = require('passport')
   , GitHubStrategy = require('passport-github').Strategy;
 
 var githubOAuth = {
-  client: 'd6eb2ec366cc31185c1e',
-  clientSecret: '2576bc4f18e7e98e7a2c820f80a249a9e0a4a153',
+  client: 'e44245776a612bee1a40',
+  clientSecret: '0f54cf20ba8527b7cac6745c7b99fff66d6dc3de',
   callbackURI: 'http://mygithubdb.elasticbeanstalk.com/#/auth/github/callback',
 };
 
