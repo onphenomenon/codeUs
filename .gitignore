@@ -1,5 +1,6 @@
 Gulpfile.js
-
+./.DS_Store
+./server/.DS_Store
 node_modules/
 bower_components/
 *.log

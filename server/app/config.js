@@ -20,17 +20,18 @@ db.schema.hasTable('coders').then(function(exists) {
   if (!exists) {
     db.schema.createTable('coders', function (coder) {
       coder.increments('id').primary();
-      coder.string('gh_username', 255);
+      coder.string('login', 255);
       coder.string('name', 255);
       coder.string('photo_url', 255);
       coder.string('location', 255);
-      coder.dateTime('gh_member_since');
-      coder.integer('stars');
+      coder.string('gh_member_since');
+      coder.integer('stargazers_count');
       coder.integer('forks');
-      coder.integer('watchers');
+      coder.integer('watchers_count');
       coder.integer('downloads');
       coder.integer('cred');
       coder.string('gh_site_url', 255);
+      coder.string('email', 255);
       // tier 2 attributes below
       coder.integer('collab_count');
       coder.string('commit_pattern', 255);
@@ -42,7 +43,7 @@ db.schema.hasTable('coders').then(function(exists) {
       coder.string('organizations', 255);
       coder.string('so_location', 255);
       coder.string('so_name', 255);
-      coder.dateTime('so_member_since');
+      coder.string('so_member_since');
       coder.integer('so_reputation');
       coder.integer('so_answer_count');
       coder.integer('so_question_count');
@@ -82,12 +83,12 @@ db.schema.hasTable('languages').then(function(exists) {
   }
 });
 
-db.schema.hasTable('join_coders_languages').then(function(exists) {
+db.schema.hasTable('coders_languages').then(function(exists) {
   if (!exists) {
-    db.schema.createTable('join_coders_languages', function (language) {
+    db.schema.createTable('coders_languages', function (language) {
       language.increments('id').primary();
-      language.integer('coder_id');
-      language.integer('language_id');
+      language.integer('coder_id');//.references('coders.id');
+      language.integer('language_id');//.references('languages.id');
       language.integer('bytes_across_repos');
       language.integer('language_cred');
       language.timestamps();
@@ -123,9 +124,9 @@ db.schema.hasTable('technology_files').then(function(exists) {
   }
 });
 
-db.schema.hasTable('join_coders_technologies').then(function(exists) {
+db.schema.hasTable('coders_technologies').then(function(exists) {
   if (!exists) {
-    db.schema.createTable('join_coders_technologies', function (language) {
+    db.schema.createTable('coders_technologies', function (language) {
       language.increments('id').primary();
       language.integer('coder_id');
       language.integer('technology_id');
