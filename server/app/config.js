@@ -4,13 +4,13 @@ var path = require('path');
 var db = require('knex')({
   client: 'mysql',
   connection: {
-    host: '127.0.0.1', // will change for deployment
-    port: '8000',
-    user: 'root',
-    password: '', // initials of our names
-    database: 'codeusdb',
-    charset: 'utf8',
-    filename: path.join(__dirname, '../db/codeus.mysql')
+    host: 'aa167x1c3q86rgz.cfvhffrdjo1n.us-west-1.rds.amazonaws.com', // will change for deployment
+    user: 'ebroot',
+    password: 'hotdogs10',
+    database: 'ebdb',// initials of our names
+    // database: process.env.RDS_PORT,
+    charset: 'utf8'
+    // filename: path.join(__dirname, '../db/codeus.mysql')
   }
 });
 
