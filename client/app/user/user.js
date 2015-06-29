@@ -5,6 +5,6 @@ mod.controller('UserController', function($scope, $http, User) {
   User.getUser(User.url.self)
     .then(function(user) {
       console.log(user)
-      $scope.user.data = user.data; 
+      $scope.user.data = user.data;
     });
 });
