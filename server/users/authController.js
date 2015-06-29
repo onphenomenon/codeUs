@@ -1,10 +1,10 @@
 var passport = require('passport')
   , GitHubStrategy = require('passport-github').Strategy;
- 
+
 var githubOAuth = {
   client: 'd6eb2ec366cc31185c1e',
   clientSecret: '2576bc4f18e7e98e7a2c820f80a249a9e0a4a153',
-  callbackURI: 'http://127.0.0.1:8000/auth/github/callback',
+  callbackURI: 'http://mygithubdb.elasticbeanstalk.com/#/auth/github/callback',
 };
 
 // Passport session setup.
@@ -36,7 +36,7 @@ passport.use(new GitHubStrategy({
     // console.log('profile', profile)
     // asynchronous verification, for effect...
     process.nextTick(function () {
-      
+
       // To keep the example simple, the user's GitHub profile is returned to
       // represent the logged-in user.  In a typical application, you would want
       // to associate the GitHub account with a user record in your database,
@@ -56,7 +56,7 @@ passport.use(new GitHubStrategy({
 module.exports = {
   ensureAuthenticated: function(req, res, next) {
     if (req.isAuthenticated()) {
-      return next(); 
+      return next();
     }
     res.redirect('/#/signin')
   }
