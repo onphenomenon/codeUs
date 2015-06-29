@@ -3,8 +3,8 @@ var mod = angular.module('GitUs.factories', [])
 mod.factory('User', function($http) {
   return {
     // username: 'soundswarm',
-    // languages: { 
-    //   ObjectCoffeeScript: 458, 
+    // languages: {
+    //   ObjectCoffeeScript: 458,
     //   JavaScript: 1234,
     //   Ruby: 23810
     // },
@@ -23,9 +23,9 @@ mod.factory('User', function($http) {
     //   Downloads: 2,
     // },
     url: {
-      root: 'http://127.0.0.1:8000',
-      self: 'http://127.0.0.1:8000'+'/api/user',
-      related: 'http://127.0.0.1:8000' + '/api/related'
+      root: 'http://mygithubdb.elasticbeanstalk.com',
+      self: 'http://mygithubdb.elasticbeanstalk.com/#'+'/api/user',
+      related: 'http://mygithubdb.elasticbeanstalk.com/#' + '/api/related'
       // user: 'http://127.0.0.1:8000'+'/api/user/',
     },
     getUser: function(userUrl) {
@@ -71,7 +71,7 @@ mod.factory('Auth', function($http) {
 });
 
 
-  
+
 
 
 // mod.factory('Auth', function ($http, $location, $window) {
