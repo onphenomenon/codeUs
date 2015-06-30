@@ -28,3 +28,10 @@ dist/
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules/
 bower_components/
+
+.DS_Store
+client/.DS_Store
+
+server/app/helpers/helpers.js
+server/cronjobs/populate.js
+server/routes/api.js

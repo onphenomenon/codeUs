@@ -38,9 +38,8 @@ mod.factory('User', function($http) {
           console.log(err);
         })
     },
-    getRelated: function(relatedUrl, primaryLang, loc) {
-      var fullUrl = relatedUrl + '?language=' + primaryLang + '&location=' + loc;
-      return $http.get(fullUrl)
+    getRelated: function(relatedUrl) {
+      return $http.get(relatedUrl)
         .then(function(array) {
           return array;
         })
@@ -49,6 +48,23 @@ mod.factory('User', function($http) {
         })
     }
   }
+});
+
+mod.factory('Coder', function($http) {
+  return {
+    url: {
+      coder: 'http://127.0.0.1:8000/coder/'
+    },
+    getCoder: function(url) {
+      return $http.get(url)
+        .then(function(coder) {
+          return coder;
+        })
+        .catch(function(err){
+          console.log(err);
+        })
+    }
+  };
 });
 
 mod.factory('Auth', function($http) {

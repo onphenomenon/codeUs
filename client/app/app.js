@@ -2,6 +2,8 @@ angular.module('GitUs', [
   'GitUs.factories',
   'GitUs.auth',
   'GitUs.user',
+  'GitUs.coders',
+  'GitUs.coder',
   'ui.bootstrap',
   'ui.router'
 
@@ -11,7 +13,7 @@ angular.module('GitUs', [
 
   $stateProvider
     .state('signin', {
-      url: "/signin",
+      url: '/signin',
       templateUrl: "app/auth/signin.html",
       controller: 'AuthController'
     })
@@ -21,11 +23,24 @@ angular.module('GitUs', [
       url: '/user',
       templateUrl: 'app/user/user.html',
       controller: 'UserController'
+    })
 
+   $stateProvider
+     .state('coders', {
+      url: '/coders',
+      templateUrl: 'app/coders/coders.html',
+      controller: 'CodersController'
+    })
+
+    $stateProvider
+     .state('coder', {
+      url: '/coder/:login',
+      templateUrl: 'app/coder/coder.html',
+      controller: 'CoderController'
     })
 
     // $httpProvider.interceptors.push('AttachTokens');
-})
+});
 // .factory('AttachTokens', function ($window) {
 //   // this is an $httpInterceptor
 //   // its job is to stop all out going request
