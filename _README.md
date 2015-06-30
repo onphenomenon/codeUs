@@ -42,6 +42,6 @@ From within the root directory:
 
 Visual Schema for the database:
 
-[CodeUs database Schema](https://github.com/codeUsLab/codeUs/blob/master/visualschema.png)
+[CodeUs database Schema](https://github.com/onphenomenon/codeUs/blob/master/visualschema.png)
 View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
