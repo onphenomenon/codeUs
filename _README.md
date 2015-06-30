@@ -1,12 +1,12 @@
-# Project Name
+# CodeUs
 
-> Pithy project description
+> Social Networking on GitHub
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Jason Menayan
+  - __Scrum Master__: Sean Connor
+  - __Development Team Members__: Karianne Burns
 
 ## Table of Contents
 
@@ -24,11 +24,9 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node
+- Grunt, grunt cli
+- mySQL
 
 ## Development
 
@@ -36,17 +34,14 @@
 
 From within the root directory:
 
-```sh
-sudo npm install -g bower
-npm install
-bower install
-```
+`npm install`
+`bower install`
+`grunt server-dev`
 
 ### Roadmap
 
+Visual Schema for the database:
+
+[CodeUs database Schema](https://github.com/codeUsLab/codeUs/blob/master/visualschema.png)
 View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
